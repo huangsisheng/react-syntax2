@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+/*
+ * @Author: your name
+ * @Date: 2021-01-27 13:11:22
+ * @LastEditTime: 2021-01-27 15:07:45
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \react-syntax2\src\views\App.js
+ */
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from "react";
+import RouterIndex from "@/router";
+
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+        <aside className="layout-left">
+          <RouterIndex></RouterIndex>
+        </aside>
+        <div className="layout-right">
+          <header></header>
+          <main></main>
+        </div>
+      </div>
+    );
+  }
 }
-
-export default App;
