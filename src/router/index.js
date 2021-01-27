@@ -1,55 +1,59 @@
 /*
  * @Author: your name
  * @Date: 2021-01-27 13:16:16
- * @LastEditTime: 2021-01-27 18:13:13
+ * @LastEditTime: 2021-01-27 23:27:27
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \react-syntax2\src\router\index.js
  */
 import { Component } from "react";
 
-import { Router, Route, Link } from "react-router-dom";
+import { Router, Route, NavLink } from "react-router-dom";
 import { createHashHistory } from "history";
-//
-import Accessbility from "@/views/guideManage/a_Accessbility";
-import CodeSplit from "@/views/guideManage/b_CodeSplit";
 
-const context = require.context("../views", true, /\.js$/);
-function importAll(r) {
-  const reg = /([./])(w+)([/])(w+)([/]w+\.js)$/;
-  return r.keys()
-}
-// .map((key) => key.match(reg));
-importAll(context);
+import { linkList, routes } from './router'
 
-console.log(importAll(context));
-
-export default class RouterIndex extends Component {
-  render() {
+function ModuleItems(props) {
     return (
-      <Router history={createHashHistory()}>
-        <div className="mainDiv">
-          <div className="leftNav">
-            <h3 className="page-title">react学习</h3>
-            <section>
-              <h4>高级指引</h4>
-              <ul>
-                <li>
-                  <Link to="/Accessbility">无障碍</Link>
-                </li>
-                <li>
-                  <Link to="/CodeSplit">代码分割</Link>
-                </li>
-              </ul>
-            </section>
-          </div>
+        <section>
+            <h4 className="module-title">{props.item.title}<span className="arrow"></span></h4>
+            <ul className="moudule-wrap">
+                {
+                    props.item.children.map(ele =>
+                        <li className="module-item">
+                            {/* 激活 */}
+                            <NavLink activeClassName="activeRoute" to={ele.path} key={ele.path}>{ele.name}</NavLink>
+                        </li>
+                    )
+                }
+            </ul>
+        </section>
+    )
+}
+export default class RouterIndex extends Component {
+    render() {
+        return (
+            <Router history={createHashHistory()}>
+                <div className="mainDiv">
+                    <div className="leftNav">
+                        <h3 className="page-title">react学习</h3>
+                        {
+                            linkList.map(item =>
+                                <ModuleItems item={item} key={item.id}/>
+                            )
+                        }
+                    </div>
 
-          <div className="rightMain">
-            <Route path="/Accessbility" exact component={Accessbility} />
-            <Route path="/CodeSplit" exact component={CodeSplit} />
-          </div>
-        </div>
-      </Router>
-    );
-  }
+                    {/* 右边视图 */}
+                    <div className="rightMain">
+                        {
+                            routes.map(item =>
+                                <Route key={item.pageName} path={'/' + item.pageName} exact component={item.component} />
+                            )
+                        }
+                    </div>
+                </div>
+            </Router>
+        );
+    }
 }
