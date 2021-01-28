@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-27 17:41:24
- * @LastEditTime: 2021-01-27 22:56:49
+ * @LastEditTime: 2021-01-28 20:43:14
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \react-syntax2\src\views\guideManage\b_code\index.js
@@ -13,7 +13,7 @@
 * 优点：减小包的体积，“懒加载”，初始化加载的时候减少所需的代码量
 *
 */
-import React, { Component, Suspense, lazy } from "react";
+import React, { Component, Suspense } from "react";
 
 /* React.lazy S */
 
@@ -50,6 +50,7 @@ function MyCom() {
 // 参见 vue的路由懒加载：
 // const Foo = () => import(/* webpackChunkName: "group-foo" */ './Foo.vue')
 // import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// import { lazy } from "react";
 /* const Home = lazy(() => import('./routes/Home'));
 const About = lazy(() => import('./routes/About'));
 

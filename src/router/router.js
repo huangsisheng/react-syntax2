@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-27 23:19:12
- * @LastEditTime: 2021-01-27 23:27:49
+ * @LastEditTime: 2021-01-28 22:41:18
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \react-syntax2\src\router\router.js
@@ -40,6 +40,14 @@ export const linkList = [
             {
                 path: '/Context',
                 name: 'Context'
+            },
+            {
+                path: '/ErrorBorder',
+                name: '错误边界'
+            },
+            {
+                path: '/RefsCon',
+                name: 'Refs转发'
             },
         ]
     }
