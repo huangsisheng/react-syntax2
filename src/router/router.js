@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-27 23:19:12
- * @LastEditTime: 2021-01-28 22:41:18
+ * @LastEditTime: 2021-01-31 21:43:15
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \react-syntax2\src\router\router.js
@@ -28,6 +28,7 @@ export const linkList = [
     {
         title: '高级指引',
         id:'1',
+        isOpen:true,
         children: [
             {
                 path: '/Accessbility',
@@ -46,9 +47,33 @@ export const linkList = [
                 name: '错误边界'
             },
             {
-                path: '/RefsCon',
+                path: '/Refs',
                 name: 'Refs转发'
             },
+            {
+                path: '/Fragment',
+                name: 'Fragment'
+            },
+            {
+                path: '/HighComp',
+                name: '高阶组件'
+            },
+            {
+                path: '/TeamWorks',
+                name: '与第三方库协同'
+            },
+            {
+                path: '/ThoroughJSX',
+                name: '深入JSX'
+            },
+            {
+                path: '/Performance',
+                name: '性能优化'
+            },
+            {
+                path: '/Portals',
+                name: 'Portals'
+            }
         ]
     }
 ]

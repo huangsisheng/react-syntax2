@@ -28,15 +28,17 @@ a{
     background-color: rgb(35,32,45);
     color:#fff;
     font-size:16px;
-    height: 1000px;
+    height:100vh;
     padding: 20px;
+    overflow: auto;
 }
 .rightMain{
     padding: 20px;
     width: 84%;
-    height:1000px;
+    height:100vh;
     background-color: #fff;
     font-size:20px;
+    overflow: auto;
 }
 
 .module-title,.module-item{

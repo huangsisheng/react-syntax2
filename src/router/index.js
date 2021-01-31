@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-27 13:16:16
- * @LastEditTime: 2021-01-27 23:27:27
+ * @LastEditTime: 2021-01-31 16:39:44
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \react-syntax2\src\router\index.js
@@ -20,9 +20,9 @@ function ModuleItems(props) {
             <ul className="moudule-wrap">
                 {
                     props.item.children.map(ele =>
-                        <li className="module-item">
+                        <li className="module-item" key={ele.path}>
                             {/* 激活 */}
-                            <NavLink activeClassName="activeRoute" to={ele.path} key={ele.path}>{ele.name}</NavLink>
+                            <NavLink activeClassName="activeRoute" to={ele.path}>{ele.name}</NavLink>
                         </li>
                     )
                 }
