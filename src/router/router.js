@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-27 23:19:12
- * @LastEditTime: 2021-01-31 21:43:15
+ * @LastEditTime: 2021-02-02 21:31:39
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \react-syntax2\src\router\router.js
@@ -73,6 +73,14 @@ export const linkList = [
             {
                 path: '/Portals',
                 name: 'Portals'
+            },
+            {
+                path: '/Profiler',
+                name: 'Profiler'
+            },
+            {
+                path: '/RenderProps ',
+                name: 'RenderProps '
             }
         ]
     }
