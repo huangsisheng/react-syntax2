@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-27 23:19:12
- * @LastEditTime: 2021-02-02 21:31:39
+ * @LastEditTime: 2021-02-04 22:17:49
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \react-syntax2\src\router\router.js
@@ -81,7 +81,22 @@ export const linkList = [
             {
                 path: '/RenderProps ',
                 name: 'RenderProps '
+            },
+            {
+                path: '/NotContralCom ',
+                name: '非受控组件 '
             }
+        ]
+    },
+    {
+        title: 'API查阅',
+        id: '2',
+        isOpen: true,
+        children:[
+            {
+                path: '/React',
+                name: 'React顶层'
+            },
         ]
     }
 ]

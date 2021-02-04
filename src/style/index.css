@@ -43,16 +43,25 @@ a{
 
 .module-title,.module-item{
     margin-bottom: 10px;
+    cursor: pointer;
 }
 .module-title .arrow{
+    margin-left: 5px;
     width: 10px;
     height: 10px;
     display: inline-block;
     border-left: 1px solid #fff;
     border-bottom: 1px solid #fff;
+    transform: rotate(135deg);
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .module-item:hover a,.activeRoute{
     color: rgb(97, 218, 251);
     font-size: 16px;
+}
+
+.moudule-wrap{
+    overflow: hidden;
+    transition: height 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
