@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-27 23:19:12
- * @LastEditTime: 2021-02-08 14:52:40
+ * @LastEditTime: 2021-03-01 17:30:18
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \react-syntax2\src\router\router.js
@@ -115,6 +115,10 @@ export const linkList = [
       {
         path: "/useEffectHook",
         name: "使用Effect Hook",
+      },
+      {
+        path: "/HookApi",
+        name: "HookAPI索引",
       },
     ],
   },

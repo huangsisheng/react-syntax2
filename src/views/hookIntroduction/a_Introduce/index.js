@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-02-08 11:16:50
- * @LastEditTime: 2021-02-08 14:14:23
+ * @LastEditTime: 2021-03-01 17:15:26
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \react-syntax2\src\views\hookIntroduction\a_Introduce\index.js
@@ -11,7 +11,7 @@ import React, { Component, useEffect, useState } from "react";
 
 /**
  * Hook 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。
- *
+ * Hook 需要在我们组件的最顶层调用。如果我们想要有条件地执行一个 effect，可以将判断放到 Hook 的内部
  */
 
 function Example(props) {
