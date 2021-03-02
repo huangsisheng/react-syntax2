@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-02-28 19:14:20
- * @LastEditTime: 2021-03-01 23:04:33
+ * @LastEditTime: 2021-03-02 21:42:55
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \react-syntax2\src\store\reduce.js
@@ -20,6 +20,11 @@ export default (state = defaultState, action) => {
     if (action.type === TYPES.CHNAGE_INPUT_VALUE) {
         const newState = JSON.parse(JSON.stringify(state))
         newState.inputVal = action.value
+        return newState
+    }
+    if (action.type === TYPES.INIT_TODO_LIST) {
+        const newState = JSON.parse(JSON.stringify(state))
+        newState.list = action.data
         return newState
     }
 

@@ -1,28 +1,29 @@
 /*
  * @Author: your name
  * @Date: 2021-03-01 21:35:00
- * @LastEditTime: 2021-03-01 22:59:59
+ * @LastEditTime: 2021-03-02 22:42:43
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \react-syntax2\src\views\redux\a_actionReducer.js
  */
 
+// 容器组件 做逻辑操作的
 
-import React, { Component, createRef, Fragment } from 'react'
-
+import React, { Component, createRef } from 'react'
+import TodoListUI from "./TodoListUI"
 import store from "@/store"
 import {
     getInputChange,
     getAddChange,
-    getDeleteChange
+    getDeleteChange,
+    getTodoList
 } from "@/store/actionCreator"
-console.log(store)
+
 
 export default class ActionReducer extends Component {
     constructor(props) {
         super(props)
         this.state = store.getState()
-        this.input = createRef()
         this.handleChangeInput = this.handleChangeInput.bind(this)
         this.handleAddItem = this.handleAddItem.bind(this)
 
@@ -34,16 +35,20 @@ export default class ActionReducer extends Component {
 
     render() {
         return (
-            <Fragment>
-                <input type="text" ref={this.input} value={this.state.inputVal} onChange={this.handleChangeInput} />
-                <button onClick={this.handleAddItem}>提交</button>
-                <ul>
-                    {
-                        this.state.list.map((item, index) => <li key={item}>{item} <span onClick={(e) => { this.handleDeleteItem(index, e) }}>删除</span></li>)
-                    }
-                </ul>
-            </Fragment>
+            <TodoListUI
+                handleChangeInput={this.handleChangeInput}
+                handleAddItem={this.handleAddItem}
+                handleDeleteItem={this.handleDeleteItem}
+                list={this.state.list}
+                inputVal={this.state.inputVal}
+            />
         )
+    }
+    componentDidMount() {
+        // 使用了redux-thunk 中间件，使得 action可以处理并返回一个异步函数
+        const action = getTodoList()
+        // 这里action自动会处理，将dispatch作为参数传递
+        store.dispatch(action)
     }
     handleChangeInput(e) {
         const action = getInputChange(e.target.value)

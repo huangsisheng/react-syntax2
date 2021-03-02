@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-27 23:19:12
- * @LastEditTime: 2021-03-01 21:36:08
+ * @LastEditTime: 2021-03-02 21:08:51
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \react-syntax2\src\router\router.js
@@ -128,8 +128,8 @@ export const linkList = [
         isOpen: true,
         children: [
             {
-                path: "/actionReducer",
-                name: "actionReducer",
+                path: "/TodoList",
+                name: "TodoList",
             },
         ]
     }
