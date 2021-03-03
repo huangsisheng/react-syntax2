@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-02-28 19:14:20
- * @LastEditTime: 2021-03-02 21:42:55
+ * @LastEditTime: 2021-03-03 11:05:15
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \react-syntax2\src\store\reduce.js
@@ -16,7 +16,6 @@ const defaultState = {
 // reducer必须是一个纯函数,给定固定的输入就必须有是固定的输出， 且不能有任何副作用
 
 export default (state = defaultState, action) => {
-    console.log(action)
     if (action.type === TYPES.CHNAGE_INPUT_VALUE) {
         const newState = JSON.parse(JSON.stringify(state))
         newState.inputVal = action.value

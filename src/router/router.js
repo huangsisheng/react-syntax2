@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-27 23:19:12
- * @LastEditTime: 2021-03-02 21:08:51
+ * @LastEditTime: 2021-03-03 11:45:17
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \react-syntax2\src\router\router.js
@@ -130,6 +130,17 @@ export const linkList = [
             {
                 path: "/TodoList",
                 name: "TodoList",
+            },
+        ]
+    },
+    {
+        title: "React-Redux",
+        id: "5",
+        isOpen: true,
+        children: [
+            {
+                path: "/NewTodoList",
+                name: "NewTodoList",
             },
         ]
     }
